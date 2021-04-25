@@ -1,24 +1,18 @@
-# README
+# JASS Supercar Rental Backend
+- Exotic Rental Car service that allows clients to view inventory, rent their favorite vehicle, and leave a satisfied review. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies Used
+- Ruby
+- Rails
 
-Things you may want to cover:
+## Screenshots
 
-* Ruby version
+## Getting Started
+- Click [here]() to access Jass Supercar Rentals
+- Click [here]() to access the client side repository.
+- Users who are logged in receive full functionality of site.
+- Users who are not logged in will not have the ability to rent a vehicle or leave a review.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Enhancements
+- Use third-party api to search for a vehicle.
+- Use google maps api to find nearest available vehicle.

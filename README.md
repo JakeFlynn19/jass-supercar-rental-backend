@@ -8,7 +8,7 @@
 ## Screenshots
 
 ## Getting Started
-- Click [here]() to access Jass Supercar Rentals
+- Click [here]() to access JASS Supercar Rentals
 - Click [here]() to access the client side repository.
 - Users who are logged in receive full functionality of site.
 - Users who are not logged in will not have the ability to rent a vehicle or leave a review.

@@ -5,7 +5,7 @@ class CreateVehicles < ActiveRecord::Migration[6.1]
       t.string :model
       t.integer :year
       t.text :description
-      t.integer :price
+      t.string :price
       t.string :img_url
       t.boolean :availability
 

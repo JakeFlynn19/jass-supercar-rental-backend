@@ -3,9 +3,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    # @reviews = Review.all
 
-    render json: @reviews
+    render json: get_reviews
   end
 
   # GET /reviews/1
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: get_reviews, status: :created, location: @review
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   def update
     if @review.update(review_params)
-      render json: @review
+      render json: get_reviews
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -36,9 +36,13 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   def destroy
     @review.destroy
+    render json: get_reviews
   end
 
   private
+  def get_reviews
+    Review.order('created_at DESC')
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])

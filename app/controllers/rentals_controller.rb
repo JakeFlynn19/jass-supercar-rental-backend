@@ -3,9 +3,9 @@ class RentalsController < ApplicationController
 
   # GET /rentals
   def index
-    @rentals = Rental.all
+    # @rentals = Rental.all
 
-    render json: @rentals
+    render json: get_rentals
   end
 
   # GET /rentals/1
@@ -18,7 +18,7 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
 
     if @rental.save
-      render json: @rental, status: :created, location: @rental
+      render json: get_rentals, status: :created, location: @rental
     else
       render json: @rental.errors, status: :unprocessable_entity
     end
@@ -36,9 +36,14 @@ class RentalsController < ApplicationController
   # DELETE /rentals/1
   def destroy
     @rental.destroy
+    render json: get_rentals
   end
 
   private
+
+  def get_rentals
+    Rental.order('created_at DESC')
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_rental
       @rental = Rental.find(params[:id])

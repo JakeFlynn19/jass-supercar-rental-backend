@@ -71,8 +71,29 @@ Vehicle.create([
 
 ])
 
+Rental.create([
+    name: "Steve", 
+    email: "Steve@me.com",
+    phone_number: "301.234.2343",
+])
 
-
+Review.create([
+    {name: "John",
+    vehicle_name: "Lambo",
+    date_rented: Date.new(2020, 03, 22),
+    description: "I felt badass driving this rocket",
+    rating: 5},
+    {name: "Michael Scott",
+    vehicle_name: "McLaren",
+    date_rented: Date.new(2021, 04, 22),
+    description: "Batman wishes he had this car",
+    rating: 5},
+    {name: "Luke Skywalker",
+    vehicle_name: "Lambo",
+    date_rented: Date.new(2021, 03, 03),
+    description: "I could destroy the deathstar with this thing",
+    rating: 5},
+])
 
 
 

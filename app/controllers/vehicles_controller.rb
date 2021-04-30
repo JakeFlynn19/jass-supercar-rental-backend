@@ -36,6 +36,7 @@ class VehiclesController < ApplicationController
   # DELETE /vehicles/1
   def destroy
     @vehicle.destroy
+    render json: get_vehicles
   end
 
   private

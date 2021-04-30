@@ -3,9 +3,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles
   def index
-    @vehicles = Vehicle.all
-
-    render json: @vehicles
+    render json: get_vehicles
   end
 
   # GET /vehicles/1
@@ -36,9 +34,13 @@ class VehiclesController < ApplicationController
   # DELETE /vehicles/1
   def destroy
     @vehicle.destroy
+    render json: get_vehicles
   end
 
   private
+  def get_vehicles
+    Vehicle.order('created_at DESC')
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
       @vehicle = Vehicle.find(params[:id])
@@ -46,6 +48,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :description, :price, :img_ur)
+      params.require(:vehicle).permit(:make, :model, :year, :description, :price, :img_url)
     end
 end
